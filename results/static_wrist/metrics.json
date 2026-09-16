@@ -1,0 +1,98 @@
+[
+  {
+    "case": "UVC90_20260915_114421",
+    "frames": 2682,
+    "camera_frames": 2580,
+    "wall_s": 261.04911809100304,
+    "wrists": [
+      {
+        "side": "strap_band_L",
+        "world": "atlas_0",
+        "valid": 2578,
+        "rms_mm": 2.4675669967273133,
+        "max_adjacent_mm": 5.1305599258205286,
+        "max_between_valid_mm": 6.623230345499954
+      },
+      {
+        "side": "strap_band_R",
+        "world": "atlas_0",
+        "valid": 2556,
+        "rms_mm": 2.6935638591322784,
+        "max_adjacent_mm": 4.82065076597552,
+        "max_between_valid_mm": 7.667671157341981
+      }
+    ]
+  },
+  {
+    "case": "UVC90_20260915_114613",
+    "frames": 2339,
+    "camera_frames": 2339,
+    "wall_s": 228.7256091029849,
+    "wrists": [
+      {
+        "side": "strap_band_R",
+        "world": "atlas_0",
+        "valid": 1465,
+        "rms_mm": 1.6223364818011392,
+        "max_adjacent_mm": 0.9889794334922534,
+        "max_between_valid_mm": 7.892392281745186
+      },
+      {
+        "side": "strap_band_L",
+        "world": "atlas_0",
+        "valid": 1418,
+        "rms_mm": 1.6126565704516544,
+        "max_adjacent_mm": 0.8601406625580558,
+        "max_between_valid_mm": 5.121337688978098
+      }
+    ]
+  },
+  {
+    "case": "UVC90_20260915_114642",
+    "frames": 1887,
+    "camera_frames": 1887,
+    "wall_s": 219.41389753099065,
+    "wrists": [
+      {
+        "side": "strap_band_L",
+        "world": "atlas_0",
+        "valid": 1099,
+        "rms_mm": 1.891471637222275,
+        "max_adjacent_mm": 1.0820804830771815,
+        "max_between_valid_mm": 4.641430088066033
+      },
+      {
+        "side": "strap_band_R",
+        "world": "atlas_0",
+        "valid": 1120,
+        "rms_mm": 1.7387651273764406,
+        "max_adjacent_mm": 1.110238958901003,
+        "max_between_valid_mm": 5.829569497925587
+      }
+    ]
+  },
+  {
+    "case": "UVC90_20260915_114721",
+    "frames": 2788,
+    "camera_frames": 2788,
+    "wall_s": 386.5130363329081,
+    "wrists": [
+      {
+        "side": "strap_band_L",
+        "world": "atlas_0",
+        "valid": 2743,
+        "rms_mm": 1.3205790687434986,
+        "max_adjacent_mm": 0.9950943730284552,
+        "max_between_valid_mm": 1.5127485125655638
+      },
+      {
+        "side": "strap_band_R",
+        "world": "atlas_0",
+        "valid": 2690,
+        "rms_mm": 1.2573963324480297,
+        "max_adjacent_mm": 0.824176083387197,
+        "max_between_valid_mm": 2.5502089988283947
+      }
+    ]
+  }
+]
