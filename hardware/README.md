@@ -6,4 +6,7 @@
 
 `marker_layouts/calibrated_release/` contains the measured rigid constellation geometry used for the reported final wrist experiments. These files reproduce that particular assembled pair of fixtures; they are not universal replacements for calibrating a newly printed and assembled fixture. Marker IDs and corner coordinates are unchanged from the experiment configuration, while local absolute source paths have been removed for anonymous release.
 
-`charuco_A4.pdf` is the camera-calibration target. Intrinsics are valid only for the same lens, focus, resolution, crop, stabilization, and camera mode used during calibration.
+`marker_layouts/charuco_A4.pdf` is the camera-calibration target. Intrinsics are valid only for the same lens, focus, resolution, crop, stabilization, and camera mode used during calibration.
+
+Original designs and layouts use [CC BY 4.0](../LICENSE.md). The accompanying
+geometry describes marker fixtures, not anatomical hand calibration.

@@ -1,46 +1,78 @@
+<div align="center">
+
 # MonoEgo
+**Monocular Metric Egocentric Demonstration Capture with Passive Wrist Constellations and Sparse Workstation Anchors**
 
-Anonymous review materials for **Monocular Metric Egocentric Demonstration Capture with Passive Wrist Constellations and Sparse Workstation Anchors**.
+<a href="https://anyverse.com/"><img src="docs/images/anyverse-dynamics-logo.png" width="280" alt="Anyverse Dynamics"></a>
 
-MonoEgo moves sensing complexity from active wrist electronics to offline geometry. One head-mounted RGB camera observes passive printable wrist constellations, natural scene features, and sparse known-size workstation markers on a shared image clock. MonoTag SLAM provides the metric camera trajectory and Atlas; the calibrated wrist constellations provide metric wrist-fixture trajectories when visible. Unsupported intervals remain invalid rather than being filled as measurements.
+[MonoTag SLAM code](https://github.com/jiejie567/EgoMono) · [Hardware](hardware/README.md) · [Results](results/README.md)
 
-## Why a single image clock?
+</div>
 
-The camera, wrist markers, workstation markers, hands, and scene appearance are observed in the same frames. The capture setup therefore avoids temporal synchronization between video and separate wrist IMUs or wireless trackers, as well as their cross-device extrinsic calibration. Camera and fixture calibration are still required.
+English | [中文](README_CN.md)
 
-## Review material
+MonoEgo records human operations with a head-mounted RGB camera, two passive wrist fixtures and known-size workstation markers. Offline reconstruction produces metric camera and wrist-fixture trajectories from the same image stream.
 
-- [`videos/`](videos/) contains two representative English stationary-constellation demonstrations with ORB features, accepted markers, camera/world status, and trajectories.
-- [`figures/`](figures/) contains the system overview, camera-reference trajectory plot, and stationary-constellation precision plot used for review.
-- [`hardware/`](hardware/) contains the printable wrist-fixture release, marker layouts, and ChArUco calibration board.
-- [`results/`](results/) contains compact source tables for the camera-reference and stationary-constellation experiments.
+The fixtures need no battery, IMU or radio. Video and geometric observations share one image clock, avoiding separate tracker-to-video synchronization. Camera and wrist-constellation calibration are still required.
 
-The companion MonoTag source repository is provided through the separate anonymous code link in the paper.
+This repository contains hardware, compact experimental results and representative demonstrations. Processing code lives in [EgoMono / MonoTag SLAM](https://github.com/jiejie567/EgoMono). Both repositories are currently private release preparations.
 
-## Capture hardware
+<p align="center"><img src="figures/fig1_teaser_integrated_v5.png" width="800" alt="MonoEgo capture system"></p>
 
-The tested capture system uses a WN-L2406K397L global-shutter camera module with a 2.3 mm, f/1.8, M12 lens (nominal 130° diagonal, 117° horizontal, and 78° vertical field of view). Reconstruction always uses calibrated intrinsics. The measured capture-side bill of materials was below US$100; the recorder, offline compute host, labour, shipping, fasteners, and consumables were excluded.
+## From recording to trajectories
 
-The wrist fixtures are passive: no wrist battery, IMU, radio, or independent clock is used. The supplied layout files describe the marker geometry used by the software; printed marker size and physical assembly must be verified before capture.
+<p align="center"><img src="docs/images/workflow.png" width="850" alt="Calibration, recording and offline reconstruction"></p>
 
-## Evidence boundaries
+1. Print and assemble the fixtures and markers; verify physical dimensions.
+2. Calibrate camera intrinsics and rigid wrist-marker geometry.
+3. Record unchanged RGB video.
+4. Run marker-constrained MonoTag reconstruction and optional hand estimation.
+5. Inspect validity, trajectories and map events before exporting data.
 
-- The camera experiment compares against odometry from a lidar--visual system. It is a reference trajectory, not an input to MonoTag and not independently certified absolute ground truth.
-- SE(3) and Sim(3) alignment answer different questions and are reported separately.
-- Stationary-constellation recordings measure precision under a known stationary condition; they do not establish dynamic or anatomical wrist accuracy.
-- Optional hand estimates, marker masks, and appearance-edited RGB are derived outputs. Edited imagery never feeds localization or label generation.
-- Raw indoor RGB is not published in this anonymous review repository because it may contain identifiable imagery.
+Known marker dimensions provide metric information. Repeated views constrain scale and map consistency. Offline matching can recover earlier or short-gap poses when sufficient evidence exists. Appearance-edited RGB remains a separate derived product and never feeds back into localization.
+
+## What's included
+
+- [Printable hardware](hardware/README.md): magnetic wrist fixtures, marker sheets and ChArUco target.
+- [Example calibrated layouts](hardware/marker_layouts/calibrated_release/): geometry of the specific tested fixtures, not a substitute for calibrating a new assembly.
+- [Result sources](results/README.md): camera-reference and stationary-wrist summaries.
+- [Representative videos](videos/): stationary-fixture demonstrations with ORB features and trajectories.
+- [Processing code](https://github.com/jiejie567/EgoMono): calibration, capture, reconstruction, replay and optional export.
+
+## Hardware
+
+The tested setup uses a WN-L2406K397L global-shutter module, a 2.3 mm f/1.8 M12 lens and 1920 × 1080 recording at 90 FPS. Reconstruction uses measured intrinsics, not nominal field of view.
+
+Reported capture-side cost was below US$100, excluding the recorder, replacement lens, offline compute, small fasteners and consumables, labour and shipping. This is not the cost of a complete recording and processing system.
+
+Print at actual size, disable fit-to-page, and measure the black square rather than the white paper. Check magnet retention, polarity and skin clearance before wearing.
 
 ## Representative videos
 
-### SW-02
+### Moving camera, stationary wrist fixtures
 
-[Download MP4](videos/SW-02_english_orb_trajectories.mp4)
+[SW-02 video](videos/SW-02_english_orb_trajectories.mp4)
 
-![SW-02 preview](videos/SW-02_preview_0300.png)
+<p align="center"><img src="videos/SW-02_preview_0300.png" width="720" alt="SW-02 stationary wrist test"></p>
 
-### SW-04
+[SW-04 video](videos/SW-04_english_orb_trajectories.mp4)
 
-[Download MP4](videos/SW-04_english_orb_trajectories.mp4)
+These examples test whether camera motion appears as motion of a stationary fixture. They measure positional precision, not full dynamic hand-motion accuracy.
 
-![SW-04 preview](videos/SW-04_preview_0300.png)
+## Experimental scope
+
+Camera motion is compared against Odin multisensor odometry as a reference. Metric error uses SE(3) alignment; Sim(3) results are separate because that alignment removes global scale error. Read error together with tracking coverage.
+
+Across four stationary-wrist recordings, per-side RMS scatter was approximately 1.26–2.69 mm. This does not establish equivalent anatomical or dynamic accuracy. See [result sources](results/README.md) for the protocol and tables.
+
+Raw indoor recordings, private screen content, machine-local paths and learned weights are excluded. The unblurred company-video review is not uploaded here.
+
+## Getting started
+
+Follow the [Ubuntu installation guide](https://github.com/jiejie567/EgoMono/blob/main/docs/INSTALL.md). Start with SLAM and geometric wrist observations; learned hand inference and training-format export are optional.
+
+## License
+
+Original hardware, layouts, figures, result tables and documentation use [CC BY 4.0](LICENSE.md). Attribute **MonoEgo — Anyverse Dynamics** and indicate changes. Third-party material retains its original license. The company logo is excluded; no trademark or endorsement rights are granted.
+
+Companion code uses GPL-3.0 because it includes modified ORB-SLAM3. Model and dataset terms still apply separately.
