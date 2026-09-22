@@ -6,7 +6,7 @@
 
 <a href="https://anyverse.com/"><img src="docs/images/anyverse-dynamics-logo.png" width="280" alt="无界动力"></a>
 
-[MonoTag SLAM 源码](https://github.com/jiejie567/EgoMono) · [硬件](hardware/README.md) · [实验结果](results/README.md)
+[MonoTag SLAM 源码](https://github.com/jiejie567/MonoTag-SLAM) · [硬件](hardware/README.md) · [实验结果](results/README.md)
 
 </div>
 
@@ -16,7 +16,7 @@ MonoEgo 使用一台头戴 RGB 相机、两只无源腕带和工位上的已知�
 
 腕带不需要电池、IMU 或无线模块。场景、手和 marker 都来自同一图像时钟，无需额外对齐独立手部追踪设备与视频。相机内参和腕带星座几何仍需要标定。
 
-本仓库已公开，包含硬件、示例视频与紧凑实验结果；处理代码单独维护在 [EgoMono / MonoTag SLAM](https://github.com/jiejie567/EgoMono)，代码仓库暂时保持 private，待后续发布。
+本仓库已公开，包含硬件、示例视频与紧凑实验结果；处理代码单独维护在 [MonoTag SLAM](https://github.com/jiejie567/MonoTag-SLAM)，代码仓库暂时保持 private，待后续发布。
 
 ![采集系统](figures/fig1_teaser_integrated_v5.png)
 

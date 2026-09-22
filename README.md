@@ -5,7 +5,7 @@
 
 <a href="https://anyverse.com/"><img src="docs/images/anyverse-dynamics-logo.png" width="280" alt="Anyverse Dynamics"></a>
 
-[MonoTag SLAM code](https://github.com/jiejie567/EgoMono) · [Hardware](hardware/README.md) · [Results](results/README.md)
+[MonoTag SLAM code](https://github.com/jiejie567/MonoTag-SLAM) · [Hardware](hardware/README.md) · [Results](results/README.md)
 
 </div>
 
@@ -15,7 +15,7 @@ MonoEgo records human operations with a head-mounted RGB camera, two passive wri
 
 The fixtures need no battery, IMU or radio. Video and geometric observations share one image clock, avoiding separate tracker-to-video synchronization. Camera and wrist-constellation calibration are still required.
 
-This public repository contains hardware, compact experimental results and representative demonstrations. Processing code is maintained separately in [EgoMono / MonoTag SLAM](https://github.com/jiejie567/EgoMono), which remains private pending release.
+This public repository contains hardware, compact experimental results and representative demonstrations. Processing code is maintained separately in [MonoTag SLAM](https://github.com/jiejie567/MonoTag-SLAM), which remains private pending release.
 
 <p align="center"><img src="figures/fig1_teaser_integrated_v5.png" width="800" alt="MonoEgo capture system"></p>
 
@@ -37,7 +37,7 @@ Known marker dimensions provide metric information. Repeated views constrain sca
 - [Example calibrated layouts](hardware/marker_layouts/calibrated_release/): geometry of the specific tested fixtures, not a substitute for calibrating a new assembly.
 - [Result sources](results/README.md): camera-reference and stationary-wrist summaries.
 - [Representative videos](videos/): stationary-fixture demonstrations with ORB features and trajectories.
-- [Processing code](https://github.com/jiejie567/EgoMono): calibration, capture, reconstruction, replay and optional export.
+- [Processing code](https://github.com/jiejie567/MonoTag-SLAM): calibration, capture, reconstruction, replay and optional export.
 
 ## Hardware
 
@@ -77,7 +77,7 @@ Raw indoor recordings, private screen content, machine-local paths and learned w
 
 ## Getting started
 
-Follow the [Ubuntu installation guide](https://github.com/jiejie567/EgoMono/blob/main/docs/INSTALL.md). Start with SLAM and geometric wrist observations; learned hand inference and training-format export are optional.
+Follow the [Ubuntu installation guide](https://github.com/jiejie567/MonoTag-SLAM/blob/main/docs/INSTALL.md). Start with SLAM and geometric wrist observations; learned hand inference and training-format export are optional.
 
 ## License
 
