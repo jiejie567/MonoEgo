@@ -41,6 +41,10 @@ Known marker dimensions provide metric information. Repeated views constrain sca
 
 ## Hardware
 
+<p align="center"><img src="hardware/wrist_constellation_v4/strap_magnetic_no_velcro_preview.png" width="800" alt="Two-part magnetic wrist fixture: assembly, separated halves and magnet-pocket contact faces"></p>
+
+Two-part magnetic wrist fixture, without Velcro. Download the printable [half A](hardware/wrist_constellation_v4/strap_half_A_magnetic_no_velcro.stl) and [half B](hardware/wrist_constellation_v4/strap_half_B_magnetic_no_velcro.stl), or inspect the [combined STL](hardware/wrist_constellation_v4/strap_band_magnetic_no_velcro_print.stl).
+
 The tested setup uses a WN-L2406K397L global-shutter module, a 2.3 mm f/1.8 M12 lens and 1920 × 1080 recording at 90 FPS. Reconstruction uses measured intrinsics, not nominal field of view.
 
 Reported capture-side cost was below US$100, excluding the recorder, replacement lens, offline compute, small fasteners and consumables, labour and shipping. This is not the cost of a complete recording and processing system.

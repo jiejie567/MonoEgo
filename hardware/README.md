@@ -1,5 +1,7 @@
 # Hardware release
 
+![Magnetic wrist fixture assembly and contact faces](wrist_constellation_v4/strap_magnetic_no_velcro_preview.png)
+
 `wrist_constellation_v4/` contains the final two-part, no-Velcro magnetic wrist-fixture design used for the release. The combined STL is provided for inspection; the two half files are the intended separately printable parts. Magnet selection, polarity, retention, skin clearance, and mechanical safety must be checked by the builder.
 
 `marker_layouts/` contains left/right printable marker sheets and their corresponding nominal constellation JSON files. Print PDFs at 100% / actual size, disable fit-to-page, and verify every black square with a ruler. The physical assembled constellation should be calibrated before quantitative capture; nominal JSON is not a substitute for that step.

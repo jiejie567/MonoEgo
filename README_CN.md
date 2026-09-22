@@ -30,6 +30,10 @@ MonoEgo 使用一台头戴 RGB 相机、两只无源腕带和工位上的已知�
 
 ## 硬件与文件
 
+<p align="center"><img src="hardware/wrist_constellation_v4/strap_magnetic_no_velcro_preview.png" width="800" alt="双半磁吸腕带：装配、分离及带磁铁孔的接触面"></p>
+
+无魔术贴的双半磁吸腕带。分别下载 [A 半 STL](hardware/wrist_constellation_v4/strap_half_A_magnetic_no_velcro.stl) 和 [B 半 STL](hardware/wrist_constellation_v4/strap_half_B_magnetic_no_velcro.stl) 用于打印；[组合 STL](hardware/wrist_constellation_v4/strap_band_magnetic_no_velcro_print.stl) 用于查看整体结构。
+
 - [双半磁吸腕带 STL、贴纸和标定板](hardware/README.md)。
 - [已标定腕带布局示例](hardware/marker_layouts/calibrated_release/)仅对应实验中的实物；新装配应重新标定。
 - [SW-02 示例](videos/SW-02_english_orb_trajectories.mp4)和 [SW-04 示例](videos/SW-04_english_orb_trajectories.mp4)展示相机移动、腕带静止时的轨迹。
