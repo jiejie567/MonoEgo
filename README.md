@@ -15,7 +15,7 @@ MonoEgo records human operations with a head-mounted RGB camera, two passive wri
 
 The fixtures need no battery, IMU or radio. Video and geometric observations share one image clock, avoiding separate tracker-to-video synchronization. Camera and wrist-constellation calibration are still required.
 
-This public repository contains hardware, compact experimental results and representative demonstrations. Processing code is maintained separately in [MonoTag SLAM](https://github.com/jiejie567/MonoTag-SLAM), which remains private pending release.
+This public repository contains hardware, compact experimental results and representative demonstrations. Public processing code is maintained separately in [MonoTag SLAM](https://github.com/jiejie567/MonoTag-SLAM).
 
 <p align="center"><img src="figures/fig1_teaser_integrated_v5.png" width="800" alt="MonoEgo capture system"></p>
 
