@@ -24,6 +24,10 @@ Use [REV5 STLs and matching marker files](wrist_constellation_REV5/): two halves
 
 护腕内部贴柔软海绵，通过厚度适配不同腕围。两瓣正确扣合后，上下两圈凹槽内各套一根橡皮筋固定，不需要磁铁。海绵不要夹进接缝，也不要为了容纳粗手腕而撑开外壳。佩戴应稳定、舒适、不勒手，疼痛或麻木时停止使用。贴纸位于两圈槽之间，橡皮筋不能遮挡码；重新装配或更换贴纸后进行腕带星座标定。
 
+## Camera selection
+
+The camera is not model-specific. Choose high-frame-rate recording, manual exposure control and a wide field of view covering both hands and background. Balance field of view with sufficient marker pixels, and use short exposure with adequate lighting. The tested 1080p/90-FPS global-shutter configuration is documented in the [main README](../README.md#camera-selection); it is not a mandatory model. Calibrate the actual lens and recording mode and keep image geometry stable during capture.
+
 ## Marker printing and calibration
 
 Use the REV5 PDF at **100% / actual size**. Dictionary: `DICT_4X4_50`; small/large black squares: 21.5/30.75 mm. Verify black-square outer edges with a ruler. The connected strip is approximately 118.13 × 34.50 mm. The nominal JSON files retain their calibration warning; foam padding does not establish an anatomical wrist frame.

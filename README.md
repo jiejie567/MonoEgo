@@ -45,7 +45,11 @@ Known marker dimensions provide metric information. Repeated views constrain sca
 
 The default design is **REV5: two halves, two rubber-band grooves, no magnet holes**. Download the [STLs and matching marker sheets](hardware/wrist_constellation_REV5/). Add foam padding inside to fit different wrist sizes, and secure the seated halves with one rubber band in each groove. See the [assembly guide](hardware/README.md).
 
-The tested setup uses a WN-L2406K397L global-shutter module, a 2.3 mm f/1.8 M12 lens and 1920 × 1080 recording at 90 FPS. Reconstruction uses measured intrinsics, not nominal field of view.
+### Camera selection
+
+No particular camera brand or model is required. Prioritize **high frame rate, manual exposure control, and a wide field of view** that covers both hands and enough surrounding scene. High FPS alone does not guarantee sharp frames: set a sufficiently short exposure for the motion and provide adequate light. Keep enough image detail for the wrist markers; a wider view is not automatically better if the markers become too small.
+
+The tested setup uses a WN-L2406K397L global-shutter module, a 2.3 mm f/1.8 M12 lens and 1920 × 1080 recording at 90 FPS. This is a reference configuration, not a required purchase. Global shutter is preferable for rapid camera motion; alternative cameras are not guaranteed to match the reported results. Calibrate the chosen lens and recording mode, and keep focus, crop and stabilization settings unchanged during capture. Reconstruction uses measured intrinsics, not nominal field of view.
 
 Reported capture-side cost was below US$100, excluding the recorder, replacement lens, offline compute, small fasteners and consumables, labour and shipping. This is not the cost of a complete recording and processing system.
 
