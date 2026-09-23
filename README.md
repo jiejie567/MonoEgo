@@ -5,7 +5,7 @@
 
 <a href="https://anyverse.com/"><img src="docs/images/anyverse-dynamics-logo.png" width="280" alt="Anyverse Dynamics"></a>
 
-[MonoTag SLAM code](https://github.com/jiejie567/MonoTag-SLAM) · [Hardware](hardware/README.md) · [Results](results/README.md)
+[Project homepage](https://monoego.jiejie567.chatgpt.site) · [MonoTag SLAM code](https://github.com/jiejie567/MonoTag-SLAM) · [Hardware](hardware/README.md) · [Results](results/README.md)
 
 </div>
 
