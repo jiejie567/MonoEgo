@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0e1b29">
+  <meta name="description" content="MonoEgo captures metric camera and wrist trajectories from one first-person RGB stream using passive wrist fixtures, workstation markers, and offline MonoTag SLAM.">
+  <title>MonoEgo — Monocular demonstration capture</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%230e1b29'/%3E%3Cpath d='M10 49 32 11l22 38H10Zm9-5h26L32 22 19 44Z' fill='%23ef7a23'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="#top" aria-label="MonoEgo home"><span class="mark" aria-hidden="true">△</span><span>MonoEgo</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#approach">Approach</a>
+        <a href="#demonstrations">Demonstrations</a>
+        <a href="#resources">Resources</a>
+      </nav>
+      <a class="header-github" href="https://github.com/jiejie567/MonoEgo" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-rule"></span> MONOCULAR · METRIC · OFFLINE</p>
+          <h1>Record the action.<br><em>Recover the motion.</em></h1>
+          <p class="lead">MonoEgo combines one head-mounted RGB camera, printable passive wrist fixtures and sparse workstation markers to reconstruct metric camera and wrist trajectories offline.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://github.com/jiejie567/MonoEgo" target="_blank" rel="noopener noreferrer">Capture system & hardware <span aria-hidden="true">↗</span></a>
+            <a class="button button-ghost" href="https://github.com/jiejie567/MonoTag-SLAM" target="_blank" rel="noopener noreferrer">MonoTag SLAM code <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="hero-note">One image clock · No wrist battery, IMU or radio</p>
+        </div>
+        <div class="hero-visual"><img src="assets/system-teaser.png" alt="Illustration of the head camera, passive wrist markers, workstation anchors and reconstructed trajectories" width="1700" height="1850"></div>
+      </div>
+    </section>
+
+    <section class="facts" aria-label="System components">
+      <div class="container facts-grid">
+        <div><span class="fact-index">01 / CAPTURE</span><strong>Single RGB stream</strong><p>Camera, marker and hand observations share one timeline.</p></div>
+        <div><span class="fact-index">02 / WEAR</span><strong>Passive wrists</strong><p>Printable fixtures use no wrist-mounted electronics.</p></div>
+        <div><span class="fact-index">03 / ANCHOR</span><strong>Known-size markers</strong><p>Workstation observations supply metric constraints.</p></div>
+        <div><span class="fact-index">04 / RECONSTRUCT</span><strong>Offline Atlas</strong><p>Visual features connect motion between anchor views.</p></div>
+      </div>
+    </section>
+
+    <section class="section approach" id="approach">
+      <div class="container">
+        <div class="section-head"><span class="section-number">01 / APPROACH</span><h2>Simple capture hardware.<br>Geometric reconstruction offline.</h2></div>
+        <div class="approach-grid">
+          <div class="process-list">
+            <div class="process-step"><span>01</span><div><h3>Calibrate</h3><p>Measure camera intrinsics and the rigid marker layout of each assembled wrist fixture.</p></div></div>
+            <div class="process-step"><span>02</span><div><h3>Record</h3><p>Keep the original first-person RGB frames intact. Static markers sit near task areas; wrists carry separate moving markers.</p></div></div>
+            <div class="process-step"><span>03</span><div><h3>Reconstruct</h3><p>MonoTag combines ORB features and marker corners to build a metric Atlas, refine scale, and recover supported earlier poses.</p></div></div>
+            <div class="process-step"><span>04</span><div><h3>Inspect & export</h3><p>Review camera and wrist trajectories together with validity, map identity and committed map events.</p></div></div>
+          </div>
+          <figure class="workflow"><img src="assets/workflow.png" alt="MonoEgo workflow from calibration and raw RGB recording to marker-constrained mapping and trajectory outputs" loading="lazy" width="1900" height="800"><figcaption>Labels are computed from the original RGB stream. Optional appearance edits are separate derived views.</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section demos" id="demonstrations">
+      <div class="container">
+        <div class="section-head"><span class="section-number">02 / DEMONSTRATIONS</span><h2>See the Atlas change.</h2><p>Short excerpts from offline reconstructions. The final Atlas and the recorded construction view are shown separately.</p></div>
+        <div class="demo-grid">
+          <article class="demo-card"><video controls preload="none" playsinline poster="assets/retrospective.jpg" aria-label="Retrospective recovery demonstration"><source src="assets/retrospective.mp4" type="video/mp4"></video><div class="demo-copy"><span>01 · 12 SEC</span><h3>Retrospective recovery</h3><p>Later map evidence recovers supported earlier image-to-map matches.</p></div></article>
+          <article class="demo-card"><video controls preload="none" playsinline poster="assets/reanchoring.jpg" aria-label="Metric re-anchoring demonstration"><source src="assets/reanchoring.mp4" type="video/mp4"></video><div class="demo-copy"><span>02 · 8 SEC</span><h3>Metric re-anchoring</h3><p>A new anchor observation refines scale after geometric validation.</p></div></article>
+          <article class="demo-card"><video controls preload="none" playsinline poster="assets/merge-loop.jpg" aria-label="Map merge and visual loop demonstration"><source src="assets/merge-loop.mp4" type="video/mp4"></video><div class="demo-copy"><span>03 · 18 SEC</span><h3>Map merge & loop</h3><p>Common-anchor evidence joins maps; a later visual loop updates the Atlas.</p></div></article>
+        </div>
+        <p class="demo-footnote">Excerpts show accepted updates from existing recordings. They do not represent real-time processing speed.</p>
+      </div>
+    </section>
+
+    <section class="section resources" id="resources">
+      <div class="container resources-grid">
+        <div><span class="section-number">03 / OPEN RESOURCES</span><h2>Build it.<br>Run it.<br>Examine it.</h2><p>Hardware and documentation are in MonoEgo. The reconstruction implementation, setup instructions and tests are in MonoTag SLAM.</p></div>
+        <div class="resource-list">
+          <a href="https://github.com/jiejie567/MonoEgo" target="_blank" rel="noopener noreferrer"><span><small>CAPTURE SYSTEM</small><strong>MonoEgo</strong><em>STLs · marker sheets · calibration notes · results</em></span><b aria-hidden="true">↗</b></a>
+          <a href="https://github.com/jiejie567/MonoTag-SLAM" target="_blank" rel="noopener noreferrer"><span><small>RECONSTRUCTION CODE</small><strong>MonoTag SLAM</strong><em>Ubuntu setup · offline processing · replay · tests</em></span><b aria-hidden="true">↗</b></a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><span>MonoEgo · Anyverse Dynamics</span><span>Monocular capture, metric reconstruction.</span><a href="#top">Back to top ↑</a></div></footer>
+</body>
+</html>
